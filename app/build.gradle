@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.hdr.vvplayer'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.hdr.vvplayer"
@@ -26,14 +26,22 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+//    repositories {
+//        flatDir {
+//            dirs 'libs'     // 声明添加libs文件夹为库
+//        }
+//    }
 }
 
 dependencies {
-
+    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+//    implementation(name: 'libvlc', ext: 'aar')
+//    implementation files('libs/libvlc.aar')
+
 }
